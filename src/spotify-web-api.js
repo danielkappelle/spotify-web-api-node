@@ -1390,10 +1390,10 @@ SpotifyWebApi.prototype = {
   },
 
   /**
-   * Remove the current user as a follower of one or more other Spotify users.
-   * @param {string[]} userIds The IDs of the users to be unfollowed.
+   * Set the volume
+   * @param {int} volume The volume, percentage between 0 and 100
    * @param {requestCallback} [callback] Optional callback method to be called instead of the promise.
-   * @example unfollowUsers(['thelinmichael', 'wizzler']).then(...)
+   * @example setVolume(56).then(..) ...
    * @returns {Promise|undefined} A promise that if successful, simply resolves to an empty object. If rejected,
    *          it contains an error object. Not returned if a callback is given.
    */
