@@ -1404,7 +1404,7 @@ SpotifyWebApi.prototype = {
         volume_percent: volume
       })
       .build()
-      .execute(HttpManager.get, callback);
+      .execute(HttpManager.put, callback);
 
   },
 };
