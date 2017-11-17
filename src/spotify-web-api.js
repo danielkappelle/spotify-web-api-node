@@ -1387,7 +1387,26 @@ SpotifyWebApi.prototype = {
       .withQueryParameters(options)
       .build()
       .execute(HttpManager.get, callback);
-  }
+  },
+
+  /**
+   * Remove the current user as a follower of one or more other Spotify users.
+   * @param {string[]} userIds The IDs of the users to be unfollowed.
+   * @param {requestCallback} [callback] Optional callback method to be called instead of the promise.
+   * @example unfollowUsers(['thelinmichael', 'wizzler']).then(...)
+   * @returns {Promise|undefined} A promise that if successful, simply resolves to an empty object. If rejected,
+   *          it contains an error object. Not returned if a callback is given.
+   */
+  setVolume: function(volume, callback) {
+    return WebApiRequest.builder(this.getAccessToken())
+      .withPath('/v1/me/player/volume')
+      .withQueryParameters({
+        volume_percent: volume
+      })
+      .build()
+      .execute(HttpManager.del, callback);
+
+  },
 };
 
 SpotifyWebApi._addMethods = function(methods) {
